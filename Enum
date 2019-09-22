@@ -1,0 +1,2 @@
+don’t have to provide a value for each case of the enumeration.
+If a value (known as a raw value) is provided for each enumeration case, the value can be a string, a character, or a value of any integer or floating-point type.
