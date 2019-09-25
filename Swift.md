@@ -9,3 +9,12 @@
 6. Functional programming patterns, e.g., map and filter
 7. Powerful error handling built-in
 8. Advanced control flow with do, guard, defer, and repeat keywords
+
+Basic Swift Data Types
+Int:
+Double and Float
+Bool
+String
+Array
+Dictionary
+
