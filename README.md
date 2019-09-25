@@ -44,4 +44,9 @@ protocol AnotherProtocol {
 }
 ```
 
+# use of bacltick in `Swift
+Backticks (`) are used as a name and to surround the keyword in the case if you want to give the same name as a reserved Swift keyword to a constant or a variable. But it is strongly advised to ignore the keyword unless you have no choice available
 
+# Adapter and Memento pattern
+Adapter – It lets the classes with incompatible interfaces to work together and it wraps itself around the object to expose a standard interface to interact with that object.Memento – This pattern in iOS is used as a part of state restoration.
+That is this externalized state can be restored without violating any encapsulation.This pattern is especially used for the archiving in Apple.
