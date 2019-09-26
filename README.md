@@ -11,10 +11,51 @@ Instead, create a new interface and let your class implement multiple interfaces
 D - Dependency inversion principle
 
 #### how to hide/transparent navigation controller
+
 #### oops concepts
-#### what is GCD
+#### what is GCD/Dispatch
+Dispatch, also known as Grand Central Dispatch (GCD), contains language features, runtime libraries, and system enhancements that provide systemic, comprehensive improvements to the support for concurrent code execution on multicore hardware in macOS, iOS, watchOS, and tvOS.
+
+Grand Central Dispatch (GCD) is a low-level API for managing concurrent operations.GCD provides three main types of queues:
+1. Main queue: runs on the main thread and is a serial queue.
+2. Global queues: concurrent queues that are shared by the whole system. There are four such queues with different priorities : high, default, low, and background. The background priority queue has the lowest priority and is throttled in any I/O activity to minimize negative system impact.
+3. Custom queues: queues that you create which can be serial or concurrent. Requests in these queues actually end up in one of the global queues.
+
+### Synchronous vs. Asynchronous
+A synchronous function returns control to the caller after the task completes. You can schedule a unit of work synchronously by calling DispatchQueue.sync(execute:).
+An asynchronous function returns immediately, ordering the task to start but not waiting for it to complete. Thus, an asynchronous function does not block the current thread of execution from proceeding on to the next function. You can schedule a unit of work asynchronously by calling DispatchQueue.async(execute:).
+
+### singleton
+The singleton pattern guarantees that only one instance of a class is instantiated.
+It’s initialize your class instance single time only with static property and it will share your class instance globally.
+```swift
+class LocationManager{
+    
+    static let shared = LocationManager()
+    
+    var locationGranted: Bool?
+    //Initializer access level change now
+    private init(){}//now we cant not create class object directly because init is private now
+    
+    func requestForLocation(){
+        //Code Process  
+        locationGranted = true     
+        print("Location granted")
+    }
+    
+}
+//Access class function in a single line
+LocationManager.shared.requestForLocation() // "Location granted"
+//Access variable value
+print(LocationManager.shared.locationGranted ?? false) // true
+
+```
+
 #### different between unowned weak property
+If you can guarantee that the reference will not be nil at its point of use, use unowned. If not, then you should be using weak.
 #### stored property and computed property
+https://apple-swift.readthedocs.io/en/latest/StoredAndComputedVariables.html
+
 #### protocol
     Protocols can include declarations for both instance methods and class methods, as well as properties. 
     A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. 
@@ -78,6 +119,7 @@ we can set the property initially but then it can’t be changed
 means that we’re copying the value of the object when it’s created. Also prevents its value from changing
 
 ### dependency injection
+pods,carthage
 
 ## declaration modifiers in Swift
 1. Final
