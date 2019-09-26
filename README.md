@@ -159,6 +159,7 @@ The frame of a UIView is the rectangle, expressed as a location (x,y) and size (
 ResponderChain is a hierarchy of objects that have the opportunity to respond to events received
 
 ### Operator Overloading
+This is a fancy way of saying you can make operators like +, -, /, or * to work with any type you’d like! You can even define your own operators if you’re feeling especially creative.
 
 ### What is TVMLKit?
 TVMLKit is the glue between TVML, JavaScript, and your native tvOS application
