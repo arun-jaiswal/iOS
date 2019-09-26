@@ -1,4 +1,15 @@
 #### what is SOLID in oops programming
+S — Single responsibility principle
+every module or class should have responsibility over a single part of the functionality provided by the software.
+O — Open/closed principle
+software entities (classes, modules, functions, etc.) should be open for extensions, but closed for modification.
+L — Liskov substitution principle
+if S is a subtype of T, then objects of type T may be replaced (or substituted) with objects of type S.
+I — Interface segregation principle
+no client should be forced to depend on methods it does not use.Put more simply: Do not add additional functionality to an existing interface by adding new methods.
+Instead, create a new interface and let your class implement multiple interfaces if needed.
+D - Dependency inversion principle
+
 #### how to hide/transparent navigation controller
 #### oops concepts
 #### what is GCD
