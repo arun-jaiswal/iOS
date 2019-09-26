@@ -21,6 +21,23 @@ Grand Central Dispatch (GCD) is a low-level API for managing concurrent operatio
 2. Global queues: concurrent queues that are shared by the whole system. There are four such queues with different priorities : high, default, low, and background. The background priority queue has the lowest priority and is throttled in any I/O activity to minimize negative system impact.
 3. Custom queues: queues that you create which can be serial or concurrent. Requests in these queues actually end up in one of the global queues.
 
+### Closures
+ self-contained functions organized as blocks and called anywhere like C and Objective C languages.
+ ```swift
+ let studname = { print("Welcome to Swift Closures") }
+studname()//Welcome to Swift Closures
+
+
+let divide = {
+   (val1: Int, val2: Int) -> Int in 
+   return val1 / val2 
+}
+
+let result = divide(200, 20)
+print (result)//10
+
+
+```
 ### Synchronous vs. Asynchronous
 A synchronous function returns control to the caller after the task completes. You can schedule a unit of work synchronously by calling DispatchQueue.sync(execute:).
 An asynchronous function returns immediately, ordering the task to start but not waiting for it to complete. Thus, an asynchronous function does not block the current thread of execution from proceeding on to the next function. You can schedule a unit of work asynchronously by calling DispatchQueue.async(execute:).
