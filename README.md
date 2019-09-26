@@ -50,3 +50,128 @@ Backticks (`) are used as a name and to surround the keyword in the case if you 
 ### Adapter and Memento pattern
 Adapter – It lets the classes with incompatible interfaces to work together and it wraps itself around the object to expose a standard interface to interact with that object.Memento – This pattern in iOS is used as a part of state restoration.
 That is this externalized state can be restored without violating any encapsulation.This pattern is especially used for the archiving in Apple.
+
+### bounding box
+The bounding box is a term used in geometry; it refers to the smallest measure (area or volume) within which a given set of points
+
+## Properties
+In Swift, properties defined with a simple let or var and are strong by default. They can be declared as weak or unowned references with weak and unowned keywords before let/var. Swift properties in types are called stored properties.
+### Strong
+the reference count will be increased and the reference to it will be maintained through the life of the object
+### Weak
+means that we are pointing to an object but not increasing its reference count. It’s often used when creating a parent child relationship. The parent has a strong reference to the child but the child only has a weak reference to the parent
+Automatically changes itself to nil
+### Read-only
+we can set the property initially but then it can’t be changed
+### Copy
+means that we’re copying the value of the object when it’s created. Also prevents its value from changing
+
+### dependency injection
+
+## declaration modifiers in Swift
+1. Final
+2. dynamic
+### final Class 
+by marking a class declaration with the final keyword, we inform the compiler that the class cannot be subclassed. This allows the compiler to make a number of optimizations to increase performance
+
+### Dynamic dispatch
+Dynamic dispatch. 
+Swift allows a class to override methods and properties declared in its superclasses. This means that the program has to determine at runtime which method or property is being referred to and then perform an indirect call or indirect access. This technique, called dynamic dispatch
+It simply means that the Objective-C runtime decides at runtime which implementation of a particular method or function it needs to invoke. 
+For example, if a subclass overrides a method of its superclass, dynamic dispatch figures out which implementation of the method needs to be invoked, that of the subclass or that of the parent class. This is a very powerful concept
+Swift uses the Swift runtime whenever possible. Swift runtime chooses other options, such as static and virtual dispatch, over dynamic dispatch whenever possible. It does this to increase performance.Static and virtual dispatch are much faster than dynamic dispatch
+
+### difference between the frame and the bounds
+The bounds of a UIView is the rectangle, expressed as a location (x,y) and size (width, height) relative to its own coordinate system (0,0). 
+The frame of a UIView is the rectangle, expressed as a location (x,y) and size (width, height) relative to the superview it is contained within.
+
+### Responder Chain
+ResponderChain is a hierarchy of objects that have the opportunity to respond to events received
+
+### Operator Overloading
+
+### What is TVMLKit?
+TVMLKit is the glue between TVML, JavaScript, and your native tvOS application
+
+### Platform limitations of tvOS
+1. no browser support of any kind, nor is there any WebKit or other web-based rendering engine you can program against
+2. cannot explicitly use local storage.At product launch, the devices ship with either 32 GB or 64 GB of hard drive space, but apps are not permitted to write directly to the onboard storage.
+
+### What is ABI
+
+### Cocoa design patterns
+**Creational:** Singleton
+**Structural:** Decorator, Adapter, Facade
+**Behavioral:** Observer, and, Memento
+### Singleton Pattern
+The Singleton design pattern ensures that only one instance exists for a given class and that there’s a global access point to that instance. It usually uses lazy loading to create the single instance when it’s needed the first time.
+### Facade Design Pattern
+The Facade design pattern provides a single interface to a complex subsystem. Instead of exposing the user to a set of classes and their APIs, you only expose one simple unified API.
+### Decorator Design Pattern
+The Decorator pattern dynamically adds behaviors and responsibilities to an object without modifying its code. It’s an alternative to subclassing where you modify a class’s behavior by wrapping it with another object.
+In Objective-C there are two very common implementations of this pattern: Category and Delegation. In Swift there are also two very common implementations of this pattern: Extensions and Delegation.
+### Adapter Pattern
+An Adapter allows classes with incompatible interfaces to work together. It wraps itself around an object and exposes a standard interface to interact with that object.
+
+### Observer Pattern
+In the Observer pattern, one object notifies other objects of any state changes.
+Cocoa implements the observer pattern in two ways: Notifications and Key-Value Observing (KVO).
+### Memento Pattern
+
+### MVC
+**Models** — responsible for the domain data or a data access layer which manipulates the data, think of ‘Person’ or ‘PersonDataProvider’ classes.
+
+**Views** — responsible for the presentation layer (GUI), for iOS environment think of everything starting with ‘UI’ prefix.
+
+**Controller/Presenter/ViewModel** — the glue or the mediator between the Model and the View, in general responsible for altering the Model by reacting to the user’s actions performed on the View and updating the View with changes from the Model.
+
+### MVVM
+UIKit independent representation of your View and its state. The View Model invokes changes in the Model and updates itself with the updated Model, and since we have a binding between the View and the View Model, the first is updated accordingly.
+Your view model will actually take in your model, and it can format the information that’s going to be displayed on your view.
+There is a more known framework called RxSwift. It contains RxCocoa, which are reactive extensions for Cocoa and CocoaTouch.
+### What is Concurrency 
+Concurrency is dividing up the execution paths of your program so that they are possibly running at the same time. The common terminology: process, thread, multithreading, and others. Terminology;
+Process, An instance of an executing app
+**Thread**, Path of execution for code
+**Multithreading**, Multiple threads or multiple paths of execution running at the same time.
+**Concurrency**, Execute multiple tasks at the same time in a scalable manner.
+**Queues**, Queues are lightweight data structures that manage objects in the order of First-in, First-out (FIFO).
+Synchronous vs Asynchronous tasks
+### Grand Central Dispatch (GCD)
+GCD is a library that provides a low-level and object-based API to run tasks concurrently while managing threads behind the scenes. Terminology;
+**Dispatch Queues**, A dispatch queue is responsible for executing a task in the first-in, first-out order.
+**Serial Dispatch Queue** A serial dispatch queue runs tasks one at a time.
+**Concurrent Dispatch Queue** A concurrent dispatch queue runs as many tasks as it can without waiting for the started tasks to finish.
+**Main Dispatch Queue** A globally available serial queue that executes tasks on the application’s main thread.
+### Readers-Writers
+**Race Condition** A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
+**Deadlock** A deadlock occurs when two or sometimes more tasks wait for the other to finish, and neither ever does.
+**Readers-Writers** problem Multiple threads reading at the same time while there should be only one thread writing.
+Readers-writer lock Such a lock allows concurrent read-only access to the shared resource while write operations require exclusive access.
+**Dispatch Barrier Block** Dispatch barrier blocks create a serial-style bottleneck when working with concurrent queues.
+
+### Swift’s pattern matching techniques
+Tuple patterns are used to match values of corresponding tuple types.
+Type-casting patterns allow you to cast or match types.
+Wildcard patterns match and ignore any kind and type of value.
+Optional patterns are used to match optional values.
+Enumeration case patterns match cases of existing enumeration types.
+Expression patterns allow you to compare a given value against a given expression.
+
+### closures
+Functions are actually a special case of closures: blocks of code that can be called later
+You can write a closure without a name by surrounding code with braces ({}). Use in to separate the arguments and return type from the body.
+
+### One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.
+
+### mutating
+mutating keyword in the declaration of structure function to mark a method that modifies the structure.
+
+```swift
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+}
+```
